@@ -1,27 +1,8 @@
+![Main Page](static/flash_logo.png)
+
 # Secure Messaging Flask App
 
 This is a secure messaging web application built with Flask. The application allows users to register, login, and send encrypted messages to each other. The messages are encrypted using RSA and AES encryption algorithms to ensure secure communication.
-
-![Main Page](static/flash_logo.png)
-
-## Project Structure
-├── app.py
-├── extensions.py
-├── forms.py
-├── instance
-│ └── app.db
-├── models.py
-├── static
-│ ├── flash_logo.png
-│ └── styles.css
-└── templates
-├── base.html
-├── dashboard.html
-├── home.html
-├── inbox.html
-├── login.html
-├── messages.html
-└── register.html
 
 ## Prerequisites
 
