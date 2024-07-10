@@ -73,10 +73,6 @@ This is a secure messaging web application built with Flask. The application all
 - Message inbox for viewing received messages
 - User dashboard
 
-## Screenshots
-
-![Main Page](static/flash_logo.png)
-
 ## Acknowledgements
 
 - Flask
