@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div class="jumbotron mt-3">
+    <h1 class="display-4">Hello, {{ user.username }}!</h1>
+    <p class="lead">Welcome to your dashboard. Here you can send and receive secure messages.</p>
+    <hr class="my-4">
+    <h2>Dashboard Options</h2>
+    <ul>
+        <li><a href="{{ url_for('messages') }}">Send a Message</a></li>
+        <li><a href="{{ url_for('inbox') }}">View Inbox</a></li>
+        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+    </ul>
+    <h2>Recent Messages</h2>
+    <p>To view your recent messages, go to your <a href="{{ url_for('inbox') }}">Inbox</a>.</p>
+</div>
+{% endblock %}
+

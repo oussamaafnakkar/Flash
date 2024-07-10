@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Inbox{% endblock %}
+{% block content %}
+<h1 class="mt-3">Inbox</h1>
+<ul class="list-group mt-3">
+    {% for message in messages %}
+        <li class="list-group-item">
+            <strong>{{ message.sender }}:</strong> <span class="message-content">{{ message.content }}</span>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
+

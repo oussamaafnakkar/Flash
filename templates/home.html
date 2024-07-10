@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="jumbotron mt-3">
+    <h1 class="display-4">Welcome to Flash!</h1>
+    <p class="lead">This is a secure messaging app built with Flask.</p>
+    <hr class="my-4">
+    <p>To get started, please register or log in using the links above.</p>
+    <h2>About Flash</h2>
+    <p>Flash is designed to provide secure messaging between users. It uses RSA and AES encryption to ensure that your messages remain private and secure.</p>
+    <h2>How It Works</h2>
+    <ul>
+        <li><strong>Registration:</strong> When you register, RSA keys (public and private) are generated for you and stored securely.</li>
+        <li><strong>Sending Messages:</strong> When you send a message, it is encrypted using AES encryption, and the AES key is further encrypted using the recipient's public RSA key.</li>
+        <li><strong>Receiving Messages:</strong> When you receive a message, your private RSA key is used to decrypt the AES key, which is then used to decrypt the message content.</li>
+    </ul>
+</div>
+{% endblock %}
+
