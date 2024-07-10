@@ -1,66 +1,116 @@
-Overview of My Flask Application: Flash
+# Secure Messaging Flask App
 
-I am excited to share my latest project, Flash, a secure messaging application built using Flask. This project showcases my skills in web development, encryption techniques, and user authentication. Below is a detailed overview of the app and its features:
-Flash: A Secure Messaging Application
+This is a secure messaging web application built with Flask. The application allows users to register, login, and send encrypted messages to each other. The messages are encrypted using RSA and AES encryption algorithms to ensure secure communication.
 
-Description:
-Flash is a secure messaging application designed to provide encrypted communication between users. The app leverages modern encryption techniques to ensure that messages are kept private and secure from unauthorized access.
+![Main Page](static/flash_logo.png)
 
-Key Features:
+## Project Structure
+├── app.py
+├── extensions.py
+├── forms.py
+├── instance
+│ └── app.db
+├── models.py
+├── static
+│ ├── flash_logo.png
+│ └── styles.css
+└── templates
+├── base.html
+├── dashboard.html
+├── home.html
+├── inbox.html
+├── login.html
+├── messages.html
+└── register.html
 
-    User Authentication:
-        Registration and login functionality with secure password hashing using werkzeug.security.
-        User authentication managed by Flask-Login.
+## Prerequisites
 
-    Message Encryption:
-        Utilizes RSA and AES encryption to secure messages.
-        RSA key pairs (public and private) are generated for each user upon registration.
-        Messages are encrypted using AES encryption, and the AES key is encrypted with the recipient's RSA public key before storage.
+- Python 3.6 or higher
+- Flask
+- Flask-WTF
+- Flask-SQLAlchemy
+- Flask-Migrate
+- Flask-Login
+- cryptography
 
-    User Dashboard:
-        A personalized dashboard for users to manage their messages.
-        Users can send and receive messages through a simple and intuitive interface.
+## Installation
 
-    Inbox Management:
-        Users can view their received messages in a secure inbox.
-        Messages are decrypted using the user's private RSA key upon retrieval.
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/oussamaafnakkar/flash.git
+    cd flash
+    ```
 
-    Responsive Design:
-        The application features a modern and responsive design using Bootstrap.
+2. **Create a virtual environment**:
+    ```bash
+    python -m venv venv
+    ```
 
-Technology Stack:
+3. **Activate the virtual environment**:
 
-    Backend:
-        Flask: A lightweight WSGI web application framework.
-        SQLAlchemy: ORM for database management.
-        Flask-Migrate: Handling database migrations.
-        Flask-WTF: For form validation and CSRF protection.
-        Flask-Login: For user session management.
+    On Windows:
+    ```bash
+    venv\Scripts\activate
+    ```
 
-    Frontend:
-        HTML/CSS: For structuring and styling the web pages.
-        Bootstrap: For responsive and modern UI components.
+    On macOS/Linux:
+    ```bash
+    source venv/bin/activate
+    ```
 
-    Encryption:
-        cryptography library: For implementing RSA and AES encryption.
-        RSA (Rivest-Shamir-Adleman): Public-key cryptosystem for secure data transmission.
-        AES (Advanced Encryption Standard): Symmetric encryption algorithm for encrypting message content.
+4. **Install the dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-How It Works:
+## Configuration
 
-    Registration:
-        Users register with a username, email, and password.
-        RSA keys (public and private) are generated and securely stored.
+1. **Set up environment variables**:
+    Create a `.env` file in the root directory and add the following:
+    ```plaintext
+    SECRET_KEY=your_secret_key
+    ```
 
-    Sending Messages:
-        Users compose a message and select a recipient.
-        The message is encrypted using AES encryption, and the AES key is encrypted with the recipient's RSA public key.
-        The encrypted message, AES key, and initialization vector (IV) are stored in the database.
+2. **Initialize the database**:
+    ```bash
+    flask db init
+    flask db migrate
+    flask db upgrade
+    ```
 
-    Receiving Messages:
-        Users access their inbox to view received messages.
-        The app decrypts the AES key using the user's private RSA key, and then decrypts the message content using the AES key.
+## Running the Application
 
-Flash represents a robust solution for secure communication, leveraging strong encryption standards to ensure user privacy and data security. I am proud of the work that went into developing this application and am excited to continue exploring advancements in secure communication technologies.
+1. **Run the Flask application**:
+    ```bash
+    flask run
+    ```
 
-Feel free to connect with me to learn more about this project or discuss potential collaborations!
+2. Open a web browser and navigate to `http://127.0.0.1:5000` to see the application in action.
+
+## Features
+
+- User registration and login
+- Secure messaging with RSA and AES encryption
+- Message inbox for viewing received messages
+- User dashboard
+
+## Screenshots
+
+![Main Page](static/flash_logo.png)
+
+## Acknowledgements
+
+- Flask
+- Flask-WTF
+- Flask-SQLAlchemy
+- Flask-Migrate
+- Flask-Login
+- cryptography
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## Contact
+
+If you have any questions, feel free to contact me at [oussamaafnakkar2002@gmail.com].
